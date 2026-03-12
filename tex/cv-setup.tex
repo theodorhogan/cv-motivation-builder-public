@@ -1,0 +1,135 @@
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{parskip}
+\usepackage{ragged2e}
+\usepackage[normalem]{ulem}
+\usepackage{amssymb}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1.5em}
+\renewcommand{\baselinestretch}{1.0}
+\raggedbottom
+\urlstyle{same}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=black}
+
+\newcommand{\headername}[1]{
+  \begin{center}
+    {\fontsize{22}{24}\selectfont\bfseries #1 \par}
+    \vspace{0.34em}
+  \end{center}
+}
+
+\newcommand{\headercontact}[1]{
+  \begin{center}
+    {\fontsize{10}{11.2}\selectfont #1 \par}
+  \end{center}
+  \vspace{0.52em}
+}
+
+\newcommand{\cvheader}[5]{
+  \headername{#1}
+  \headercontact{\uline{\emph{#2}} | #3 | #4 | #5}
+}
+
+\newcommand{\motivationheader}[4]{
+  \headername{#1}
+  \headercontact{#2 | \href{mailto:#3}{#3} | #4}
+}
+
+\newcommand{\letterheading}[2]{
+  \noindent{\fontsize{12}{14}\selectfont\bfseries\MakeUppercase{#1}}%
+  \hfill
+  {\fontsize{12}{14}\selectfont\bfseries #2}\par
+  \vspace{0.14em}
+  \hrule
+  \vspace{0.26em}
+}
+
+\newenvironment{recipientblock}{
+  \par
+  \begin{minipage}[t]{0.42\textwidth}
+  \itshape
+  \raggedright
+}{
+  \end{minipage}\par
+  \vspace{0.78em}
+}
+
+\newcommand{\recipientline}[1]{#1\par}
+
+\newenvironment{motivationbody}{
+  \begingroup
+  \setlength{\parskip}{8pt}
+}{
+  \par
+  \endgroup
+}
+
+\newcommand{\cvsection}[1]{
+  \vspace{0.08em}
+  {\fontsize{12}{14}\selectfont\bfseries\MakeUppercase{#1}\par}
+  \vspace{0.14em}
+  \hrule
+  \vspace{0.26em}
+}
+
+\newcommand{\cvrow}[2]{
+  \noindent #1\hfill #2\par
+}
+
+\newcommand{\cvcompany}[2]{
+  \cvrow{\textbf{#1}}{\textbf{#2}}
+}
+
+\newcommand{\cvposition}[2]{
+  \cvrow{{\itshape #1}}{{\itshape #2}}
+}
+
+\newcommand{\cvpositionlist}[2]{
+  \par\noindent{{\itshape #1}}\hfill{{\itshape #2}}\par\vspace{-0.08em}
+}
+
+\newlength{\cvbulletindent}
+\setlength{\cvbulletindent}{13.5pt}
+
+\newcommand{\cvlistitem}{
+  \par\vspace{0.06em}\noindent
+  \hangindent=\cvbulletindent
+  \hangafter=1
+  \makebox[0pt][l]{\raisebox{0.22ex}{\tiny$\blacksquare$}\hspace{0.55em}}%
+  \hspace*{\cvbulletindent}%
+}
+
+\newenvironment{cvitems}{
+  \begingroup
+  \let\cvposition\cvpositionlist
+  \let\item\cvlistitem
+}{
+  \par
+  \endgroup
+  \vspace{0.62em}
+}
+
+\newenvironment{cvitemscompact}{
+  \begingroup
+  \let\cvposition\cvpositionlist
+  \let\item\cvlistitem
+}{
+  \par
+  \endgroup
+}
+
+\newcommand{\linkedinline}[1]{
+  \vspace{0.34em}
+  \begin{center}
+    {\fontsize{10}{11.2}\selectfont #1 \par}
+  \end{center}
+}

@@ -1,0 +1,18 @@
+format:
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 12pt
+    geometry:
+      - top=16mm
+      - bottom=17mm
+      - left=14mm
+      - right=14mm
+    toc: false
+    number-sections: false
+    colorlinks: false
+    include-in-header:
+      - tex/cv-setup.tex
+
+execute:
+  echo: false
